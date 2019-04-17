@@ -11,7 +11,8 @@ from sklearn.feature_extraction.text import  TfidfVectorizer
 from sklearn.decomposition import TruncatedSVD
 import umap
 
-
+# document'shape is a list of [sentences]
+# return a dict key=sentence , value=topic
 def latent_semantic_analysis(document, labels, vectorizer=TfidfVectorizer(max_features=50, max_df=0.5, smooth_idf=True),
                              svd_model=TruncatedSVD(n_components=20, n_iter=100, random_state=41), view_method='umap'):
 
